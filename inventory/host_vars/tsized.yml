@@ -6,6 +6,9 @@ project:
 resourcequota:
   NAMESPACE: "{{ namespace_prefix }}-ci-cd"
 
+limits:
+  NAMESPACE: "{{ namespace_prefix }}-ci-cd"
+
 ansible_connection: local
 openshift_cluster_content:
 - object: projectrequest
@@ -24,5 +27,5 @@ openshift_cluster_content:
   content:
   - name: "{{ ci_cd_namespace }}"
     namespace: "{{ ci_cd_namespace }}"
-    template: "{{ playbook_dir }}/templates/resourcequota.yml"
+    template: "{{ playbook_dir }}/templates/limits.yml"
     params_from_vars: "{{ resourcequota }}"

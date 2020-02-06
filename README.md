@@ -14,9 +14,7 @@ This project is created for the automation of the onboarding of projects, apps, 
 ansible-galaxy install -r requirements.yml --roles-path=roles
 ```
 
-Run the play book using this to create projects and roles
-
-ansible-playbook apply.yml -i inventory/ -e target=tools
+* Run the play book using this to create projects and roles
 
 ```
 ansible-playbook apply.yml -e target=request   -i inventory/   -e skip_version_checks=true

@@ -16,7 +16,7 @@ openshift_cluster_content:
   - name: "{{ ci_cd_namespace }}"
     template: "{{ playbook_dir }}/templates/projects.yml"
     action: apply
-    params_from_vars: "{{ ci_cd }}"
+    params_from_vars: "{{ project }}"
 - object: resourcequota
   content:
   - name: "{{ ci_cd_namespace }}"
@@ -28,4 +28,4 @@ openshift_cluster_content:
   - name: "{{ ci_cd_namespace }}"
     namespace: "{{ ci_cd_namespace }}"
     template: "{{ playbook_dir }}/templates/limits.yml"
-    params_from_vars: "{{ resourcequota }}"
+    params_from_vars: "{{ limits }}"

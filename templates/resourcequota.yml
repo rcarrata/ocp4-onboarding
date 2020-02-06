@@ -1,0 +1,24 @@
+---
+apiVersion: v1
+kind: Template
+metadata:
+  name: quota
+objects:
+- apiVersion: v1
+  kind: ResourceQuota
+  metadata:
+    name: ${NAMESPACE}-quota
+  spec:
+    hard:
+      pods: "10"
+      requests.cpu: "4"
+      requests.memory: 10Gi
+      resourcequotas: "1"
+      requests.storage: 50Gi
+      persistentvolumeclaims: "5"
+parameters:
+- description: Name
+  displayName: Name
+  name: NAMESPACE
+  required: true
+

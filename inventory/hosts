@@ -1,5 +1,14 @@
-[bootstrap]
-projects-and-policies
-
 [request]
 tsized
+
+[small]
+small
+
+[medium]
+medium
+
+[large]
+large
+
+[xlarge]
+xlarge

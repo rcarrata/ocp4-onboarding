@@ -1,0 +1,6 @@
+---
+- name: Provision new namespaces with specific resources
+  hosts: "{{ size }}"
+  tasks:
+    - include_role:
+        name: openshift-applier/roles/openshift-applier

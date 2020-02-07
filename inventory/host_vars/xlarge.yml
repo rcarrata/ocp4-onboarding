@@ -1,0 +1,31 @@
+---
+project:
+  NAMESPACE: "{{ namespace_prefix }}"
+  NAMESPACE_DISPLAY_NAME: "{{ namespace_prefix | title}}s project"
+
+ansible_connection: local
+openshift_cluster_content:
+- object: projectrequest
+  content:
+  - name: "{{ namespace_prefix  }}-projectrequest"
+    template: "{{ playbook_dir }}/templates/projects.yml"
+    action: apply
+    params_from_vars: "{{ project }}"
+- object: resourcequota
+  content:
+  - name: "{{ namespace_prefix }}-resourcequota"
+    namespace: "{{ namespace_prefix }}"
+    template: "{{ playbook_dir }}/templates/resourcequota.yml"
+    params: "{{ playbook_dir}}/params/xlarge"
+    params_from_vars: "{{ project }}"
+- object: limits
+  content:
+  - name: "{{ namespace_prefix }}-limits"
+    namespace: "{{ namespace_prefix }}"
+    template: "{{ playbook_dir }}/templates/limits.yml"
+    params: "{{ playbook_dir}}/params/xlarge"
+    params_from_vars: "{{ project }}"
+
+
+
+

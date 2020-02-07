@@ -14,20 +14,51 @@ objects:
       -
         type: Container
         max:
-          cpu: 4000m
-          memory: 1024Mi
+          cpu: ${LIMITS_MAX_CPU}
+          memory: ${LIMITS_MAX_MEMORY}
         min:
-          cpu: 10m
-          memory: 5Mi
+          cpu: ${LIMITS_MIN_CPU}
+          memory: ${LIMITS_MIN_MEMORY}
         default:
-          cpu: 4000m
-          memory: 1024Mi
+          cpu: ${LIMITS_DEFAULT_CPU}
+          memory: ${LIMITS_DEFAULT_MEMORY}
         defaultRequest:
-          cpu: 100m
-          memory: 512Mi
+          cpu: ${LIMITS_DEFAULT_REQUEST_CPU}
+          memory: ${LIMITS_DEFAULT_REQUEST_MEMORY}
 parameters:
 - description: Name
   displayName: Name
   name: NAMESPACE
   required: true
-
+- description: LIMITS_MAX_CPU
+  displayName: LIMITS_MAX_CPU
+  name: LIMITS_MAX_CPU
+  required: true
+- description: LIMITS_MAX_MEMORY
+  displayName: LIMITS_MAX_MEMORY
+  name: LIMITS_MAX_MEMORY
+  required: true
+- description: LIMITS_MIN_CPU
+  displayName: LIMITS_MIN_CPU
+  name: LIMITS_MIN_CPU
+  required: true
+- description: LIMITS_MIN_MEMORY
+  displayName: LIMITS_MIN_MEMORY
+  name: LIMITS_MIN_MEMORY
+  required: true
+- description: LIMITS_DEFAULT_CPU
+  displayName: LIMITS_DEFAULT_CPU
+  name: LIMITS_DEFAULT_CPU
+  required: true
+- description: LIMITS_DEFAULT_MEMORY
+  displayName: LIMITS_DEFAULT_MEMORY
+  name: LIMITS_DEFAULT_MEMORY
+  required: true
+- description: LIMITS_DEFAULT_REQUEST_CPU
+  displayName: LIMITS_DEFAULT_REQUEST_CPU
+  name: LIMITS_DEFAULT_REQUEST_CPU
+  required: true
+- description: LIMITS_DEFAULT_REQUEST_MEMORY
+  displayName: LIMITS_DEFAULT_REQUEST_MEMORY
+  name: LIMITS_DEFAULT_REQUEST_MEMORY
+  required: true

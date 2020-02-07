@@ -10,15 +10,34 @@ objects:
     name: ${NAMESPACE}-quota
   spec:
     hard:
-      pods: "10"
-      requests.cpu: "4"
-      requests.memory: 10Gi
+      pods: "${RESOURCEQUOTA_PODS}"
+      requests.cpu: "${RESOURCEQUOTA_CPU}"
+      requests.memory: ${RESOURCEQUOTA_MEMORY}
       resourcequotas: "1"
-      requests.storage: 50Gi
-      persistentvolumeclaims: "5"
+      requests.storage: ${RESOURCEQUOTA_STORAGE}
+      persistentvolumeclaims: "${RESOURCEQUOTA_PVC}"
 parameters:
 - description: Name
   displayName: Name
   name: NAMESPACE
   required: true
-
+- description: RESOURCEQUOTA_PODS
+  displayName: RESOURCEQUOTA_PODS
+  name: RESOURCEQUOTA_PODS
+  required: true
+- description: RESOURCEQUOTA_CPU
+  displayName: RESOURCEQUOTA_CPU
+  name: RESOURCEQUOTA_CPU
+  required: true
+- description: RESOURCEQUOTA_MEMORY
+  displayName: RESOURCEQUOTA_MEMORY
+  name: RESOURCEQUOTA_MEMORY
+  required: true
+- description: RESOURCEQUOTA_STORAGE
+  displayName: RESOURCEQUOTA_STORAGE
+  name: RESOURCEQUOTA_STORAGE
+  required: true
+- description: RESOURCEQUOTA_PVC
+  displayName: RESOURCEQUOTA_PVC
+  name: RESOURCEQUOTA_PVC
+  required: true

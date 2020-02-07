@@ -17,5 +17,5 @@ ansible-galaxy install -r requirements.yml --roles-path=roles
 * Run the play book using this to create projects and roles
 
 ```
-ansible-playbook apply.yml -e target=request   -i inventory/   -e skip_version_checks=true
+ansible-playbook new_project.yml -e size=medium -e namespace_prefix=testing -i inventory/ -e skip_version_checks=true
 ```

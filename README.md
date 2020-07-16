@@ -1,4 +1,4 @@
-# LafargeHolcim Onboarding Automation Project
+# Onboarding Automation Project
 
 This project is created for the automation of the onboarding of projects, apps, etc.
 

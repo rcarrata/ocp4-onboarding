@@ -8,3 +8,6 @@ openshift_templates_raw_version_tag: "v1.4.9"
 cop_quickstarts: "https://github.com/redhat-cop/containers-quickstarts.git"
 cop_quickstarts_raw: "https://raw.githubusercontent.com/redhat-cop/containers-quickstarts"
 cop_quickstarts_raw_version_tag: "v1.9"
+
+
+

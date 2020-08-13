@@ -1,6 +1,6 @@
 ---
 - name: Provision new namespaces with specific resources
-  hosts: ocp
+  hosts: all
   tasks:
     - include_role:
         name: openshift-applier/roles/openshift-applier

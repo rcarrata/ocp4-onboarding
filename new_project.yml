@@ -1,6 +1,7 @@
 ---
 - name: Provision new namespaces with specific resources
   hosts: all
+  connection: local
   tasks:
     - include_role:
         name: openshift-applier/roles/openshift-applier

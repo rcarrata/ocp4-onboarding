@@ -1,6 +1,8 @@
 ---
 - name: Provision new namespaces with specific resources
   hosts: all
+  vars:
+    api_key: pepe_paco
   connection: local
   tasks:
 

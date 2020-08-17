@@ -6,8 +6,8 @@
 
     - name: Login to the OCP Cluster
       shell: "oc login --token={{ api_key }}"
-      when:
-        - api_key is defined
+      #when:
+      #  - api_key is defined
 
     - include_role:
         name: openshift-applier/roles/openshift-applier

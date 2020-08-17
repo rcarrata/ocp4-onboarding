@@ -4,6 +4,9 @@
   connection: local
   tasks:
 
+    - debug:
+        msg: "{{ api_key }}"
+
     - name: Login to the OCP Cluster
       shell: "oc login --token={{ api_key }}"
       #when:

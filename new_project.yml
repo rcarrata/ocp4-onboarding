@@ -10,7 +10,7 @@
         msg: "{{ ocp_api_key }}"
 
     - name: Login to the OCP Cluster
-      shell: "oc login "{{ ocp_host }}" --token={{ ocp_api_key }}"
+      shell: "oc login {{ ocp_host }} --token={{ ocp_api_key }}"
       #when:
       #  - api_key is defined
 
